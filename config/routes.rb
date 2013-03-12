@@ -1,4 +1,11 @@
 Website::Application.routes.draw do
+  resources :users
+
+  get "home/index"
+  get "users/new"
+  get "users/create"
+
+  root :to => 'home#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -20,6 +27,21 @@ Website::Application.routes.draw do
   #       post 'toggle'
   #     end
   #
+" ============================================================================
+" Netrw Directory Listing                                        (netrw v143)
+"   /home/nurisa/railsproject/website/public
+"   Sorted by      name
+"   Sort sequence: [\/]$,\<core\%(\.\d\+\)\=\>,\.h$,\.c$,\.cpp$,\~\=\*$,*,\.o$,\.obj$,\.info$,\.swp$,\.bak$,\~$
+"   Quick Help: <F1>:help  -:go up dir  D:delete  R:rename  s:sort-by  x:exec
+" ============================================================================
+../
+404.html
+422.html
+500.html
+favicon.ico
+index.html
+robots.txt
+.swp
   #     collection do
   #       get 'sold'
   #     end
@@ -54,5 +76,5 @@ Website::Application.routes.draw do
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id))(.:format)'
+   match ':controller(/:action(/:id))(.:format)'
 end
